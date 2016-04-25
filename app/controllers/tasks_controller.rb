@@ -13,7 +13,7 @@ class TasksController < ApplicationController
     @task = Task.new(task_params)
 
     if @task.save
-      render json: {task: @task, location: task_url(@task)} status: :created #201
+      render json: {task: @task, location: task_url(@task)}, status: :created #201
     else
       render json: { errors: @task.errors}, status: :unprocessable_entity #422
     end
